@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import CoachesView from './views/CoachesView.vue';
+import RegisterView from './views/RegisterView.vue';
+import RequestsView from './views/RequestsView.vue';
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -6,7 +9,7 @@ export const router = createRouter({
     { path: '/', redirect: '/coaches' },
     {
       path: '/coaches',
-      component: null,
+      component: CoachesView,
     },
     {
       path: '/coaches/:id',
@@ -20,11 +23,11 @@ export const router = createRouter({
     },
     {
       path: '/register',
-      component: null,
+      component: RegisterView,
     },
     {
       path: '/requests',
-      component: null,
+      component: RequestsView,
     },
     {
       path: '/:notFound(.*)',
