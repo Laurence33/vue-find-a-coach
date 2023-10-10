@@ -6,11 +6,11 @@ export const store = createStore({
   modules: { coaches: coachesModule, requests: requestsModule },
   state() {
     return {
-      userId: Date.now(),
+      userId: 'c1',
     };
   },
   getters: {
-    useId(state) {
+    userId(state) {
       return state.userId;
     },
   },
