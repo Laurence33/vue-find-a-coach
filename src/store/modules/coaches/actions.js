@@ -21,4 +21,28 @@ export default {
     }
     context.commit('registerCoach', { ...coachData, id: userId });
   },
+  async loadCoaches(context) {
+    const response = await fetch(
+      `https://practiceproject-972d5.firebaseio.com/coaches.json`
+    );
+
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      // error
+    }
+    console.log(responseData);
+    const coaches = [];
+    for (const key in responseData) {
+      const coach = {
+        firstName: responseData[key].firstName,
+        lastName: responseData[key].lastName,
+        description: responseData[key].description,
+        hourlyRate: responseData[key].rate,
+        areas: responseData[key].areas,
+      };
+      coaches.push(coach);
+    }
+    context.commit('setCoaches', coaches);
+  },
 };
