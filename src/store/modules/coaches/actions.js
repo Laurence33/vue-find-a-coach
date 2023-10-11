@@ -29,8 +29,10 @@ export default {
     const responseData = await response.json();
 
     if (!response.ok) {
-      // error
+      const error = new Error(responseData.message) || 'Failed to fetch!';
+      throw error;
     }
+
     console.log(responseData);
     const coaches = [];
     for (const key in responseData) {
