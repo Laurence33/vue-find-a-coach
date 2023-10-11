@@ -10,13 +10,22 @@
         <li>
           <router-link to="/requests">Requests</router-link>
         </li>
-        <li>
+        <li v-if="!isCoach">
           <router-link to="/register">Register</router-link>
         </li>
       </ul>
     </nav>
   </header>
 </template>
+<script>
+export default {
+  methods: {
+    isCoach() {
+      return this.$store.getters['coaches/isCoach'];
+    }
+  }
+}
+</script>
 <style scoped>
 header {
   width: 100%;
