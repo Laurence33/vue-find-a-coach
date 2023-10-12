@@ -24,13 +24,13 @@ export default {
     }
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       this.formIsValid = true;
       if (this.email === '' || !this.email.includes('@') || this.message === '') {
         this.formIsValid = false;
         return
       }
-      this.$store.dispatch('requests/contactCoach', { coachId: this.$route.params.id, email: this.email, message: this.message });
+      await this.$store.dispatch('requests/contactCoach', { coachId: this.$route.params.id, email: this.email, message: this.message });
       this.$router.replace('/coaches');
     }
   }
