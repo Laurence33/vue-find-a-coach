@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-  methods: {
+  computed: {
     isCoach() {
       return this.$store.getters['coaches/isCoach'];
     }
