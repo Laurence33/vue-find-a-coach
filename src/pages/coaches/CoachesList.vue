@@ -5,7 +5,6 @@
         {{ error }}
       </p>
     </base-dialog>
-    <h1>Coaches View</h1>
     <section>
       <coach-filter @change-filter="setFilters"></coach-filter>
     </section>
