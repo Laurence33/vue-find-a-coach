@@ -57,7 +57,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 form {
   margin: 1rem;
   padding: 1rem;
