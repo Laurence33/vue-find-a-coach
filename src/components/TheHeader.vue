@@ -16,6 +16,9 @@
         <li v-if="!isCoach">
           <router-link to="/register">Register</router-link>
         </li>
+        <li v-if="isLoggedIn">
+          <base-button @click="logout">Logout</base-button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -28,6 +31,11 @@ export default {
     },
     isLoggedIn() {
       return this.$store.getters['isAuthenticated'];
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout');
     }
   }
 }

@@ -56,4 +56,12 @@ export default {
       email: responseData.email,
     });
   },
+  async logout(context) {
+    context.commit('setUser', {
+      token: null,
+      userId: null,
+      tokenExpiration: null,
+      email: null,
+    });
+  },
 };
