@@ -7,8 +7,8 @@ export default {
       returnSecureToken: true,
     };
     const url =
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=' +
-      process.env.FIREBASE_KEY;
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+      process.env.VUE_APP_FIREBASE_KEY;
     const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify(body),

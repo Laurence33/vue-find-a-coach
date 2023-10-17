@@ -1,6 +1,6 @@
 <template>
   <base-card>
-    <form>
+    <form @submit.prevent="submitForm">
       <div class="form-control">
         <label for="email">E-mail</label>
         <input type="email" id="email" v-model.trim="email" />
@@ -48,6 +48,11 @@ export default {
         return;
       }
       // send http request...
+      if (this.mode === 'login') {
+        //
+      } else {
+        this.$store.dispatch('signup', { email: this.email, password: this.password });
+      }
     },
     switchAuthMode() {
       if (this.mode === 'login')
